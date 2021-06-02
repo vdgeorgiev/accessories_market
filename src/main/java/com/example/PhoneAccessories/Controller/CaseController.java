@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Set;
 
-@RequestMapping(value = "items")
+@RequestMapping(value = "cases")
 @RestController
 public class CaseController {
     CaseService caseService;
@@ -19,13 +19,20 @@ public class CaseController {
     CaseController(CaseService caseService) {
         this.caseService = caseService;
     }
+
     @GetMapping
     public Set<CaseDto> findAll() {
         return caseService.returnAllCases();
     }
+
     @PostMapping
     public ResponseEntity<HttpStatus> save(@RequestBody Case item) {
         caseService.save(item);
         return ResponseEntity.status(HttpStatus.CREATED).build();
+    }
+    @DeleteMapping(value = "/{id}")
+    public ResponseEntity<HttpStatus> deleteByUsername(@PathVariable Long id) {
+        caseService.deleteById(id);
+        return ResponseEntity.ok().build();
     }
 }

@@ -1,6 +1,7 @@
 package com.example.PhoneAccessories.Dto;
 
 import lombok.*;
+import org.joda.money.Money;
 
 @Builder
 @Data
@@ -8,7 +9,7 @@ import lombok.*;
 @AllArgsConstructor
 public class CaseDto {
 
-    private String name;
-    private Double price;
+    private String header;
+    private Money price;
     private Integer pcs;
 }

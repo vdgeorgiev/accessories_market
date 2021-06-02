@@ -1,10 +1,9 @@
 package com.example.PhoneAccessories.Repository;
 
-import com.example.PhoneAccessories.Model.Case;
+import com.example.PhoneAccessories.Model.Color;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface CaseRepository extends JpaRepository<Case, Long> {
-    void deleteById(Long id);
+public interface ColorRepository extends JpaRepository<Color,Long> {
 }

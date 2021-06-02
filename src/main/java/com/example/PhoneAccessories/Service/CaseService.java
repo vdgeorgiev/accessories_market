@@ -28,11 +28,14 @@ public class CaseService {
         Set<CaseDto> collection =new HashSet<>();
         for(Case item : cases) {
             CaseDto caseDto = new CaseDto();
-            caseDto.setName(item.getName());
+            caseDto.setHeader(item.getHeader());
             caseDto.setPrice(item.getPrice());
-            caseDto.setPcs(item.getPcs());
+            caseDto.setPcs(item.getPiece().getPieces());
             collection.add(caseDto);
         }
         return collection;
+    }
+    public void deleteById(@NotNull Long id) {
+        caseRepository.deleteById(id);
     }
 }
