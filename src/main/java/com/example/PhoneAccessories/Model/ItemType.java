@@ -1,24 +1,27 @@
 package com.example.PhoneAccessories.Model;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.Set;
 
-@Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@Data
 @Entity
-@Table(name = "brands")
-public class Brand {
+@Table(name = "type")
+public class ItemType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(unique = true,nullable = false)
-    private String name;
+    private String type;
 
     @JsonManagedReference
     @OneToMany(mappedBy = "name" , cascade = CascadeType.ALL,orphanRemoval = true)

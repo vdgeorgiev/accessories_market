@@ -12,8 +12,8 @@ import javax.persistence.*;
 @Builder
 @Data
 @Entity
-@Table(name = "cases")
-public class Case {
+@Table(name = "items")
+public class Item {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -42,4 +42,9 @@ public class Case {
     @ManyToOne
     @JoinColumn(name = "brand_id")
     private Brand name;
+
+    @JsonBackReference
+    @ManyToOne
+    @JoinColumn(name = "type_id")
+    private ItemType type;
 }

@@ -1,15 +1,11 @@
 package com.example.PhoneAccessories.Service;
 
-import com.example.PhoneAccessories.Dto.CaseDto;
-import com.example.PhoneAccessories.Model.Case;
 import com.example.PhoneAccessories.Model.Color;
 import com.example.PhoneAccessories.Repository.ColorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.validation.constraints.NotNull;
-import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 

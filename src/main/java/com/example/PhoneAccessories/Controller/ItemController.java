@@ -1,8 +1,8 @@
 package com.example.PhoneAccessories.Controller;
 
-import com.example.PhoneAccessories.Dto.CaseDto;
-import com.example.PhoneAccessories.Model.Case;
-import com.example.PhoneAccessories.Service.CaseService;
+import com.example.PhoneAccessories.Dto.ItemDto;
+import com.example.PhoneAccessories.Model.Item;
+import com.example.PhoneAccessories.Service.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,27 +12,27 @@ import java.util.Set;
 
 @RequestMapping(value = "cases")
 @RestController
-public class CaseController {
-    CaseService caseService;
+public class ItemController {
+    ItemService itemService;
 
     @Autowired
-    CaseController(CaseService caseService) {
-        this.caseService = caseService;
+    ItemController(ItemService itemService) {
+        this.itemService = itemService;
     }
 
     @GetMapping
-    public Set<CaseDto> findAll() {
-        return caseService.returnAllCases();
+    public Set<ItemDto> findAll() {
+        return itemService.returnAllCases();
     }
 
     @PostMapping
-    public ResponseEntity<HttpStatus> save(@RequestBody Case item) {
-        caseService.save(item);
+    public ResponseEntity<HttpStatus> save(@RequestBody Item item) {
+        itemService.save(item);
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
     @DeleteMapping(value = "/{id}")
     public ResponseEntity<HttpStatus> deleteByUsername(@PathVariable Long id) {
-        caseService.deleteById(id);
+        itemService.deleteById(id);
         return ResponseEntity.ok().build();
     }
 }

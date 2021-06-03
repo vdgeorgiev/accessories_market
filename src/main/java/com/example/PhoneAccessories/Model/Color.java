@@ -23,5 +23,5 @@ public class Color {
     private String color;
 
     @OneToMany(mappedBy = "color" , cascade = CascadeType.ALL,orphanRemoval = true)
-    private Set<Case> cases;
+    private Set<Item> items;
 }

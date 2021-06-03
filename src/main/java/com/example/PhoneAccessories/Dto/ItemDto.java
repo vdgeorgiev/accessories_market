@@ -7,7 +7,7 @@ import org.joda.money.Money;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class CaseDto {
+public class ItemDto {
 
     private String header;
     private Money price;
