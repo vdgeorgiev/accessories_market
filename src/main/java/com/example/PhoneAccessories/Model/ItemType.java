@@ -21,7 +21,7 @@ public class ItemType {
     private Long id;
 
     @Column(unique = true,nullable = false)
-    private String type;
+    private String type; // Type item: case ,headphone, charger and other.
 
     @JsonManagedReference
     @OneToMany(mappedBy = "name" , cascade = CascadeType.ALL,orphanRemoval = true)
